@@ -3,7 +3,6 @@ package com.login;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,14 +49,14 @@ public class MainActivity extends AppCompatActivity {
                 }.execute();
             }
         });
-
+        //
         btnResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tvResult.setText(httpPost.select().toString().replace("{", "{\n"));
             }
         });
-
+        //
         btnDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, etId.getText().toString() + " 삭제 됐습니다.", Toast.LENGTH_SHORT).show();
             }
         });
-
+        //
         btnTrun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,5 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "초기화", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }
